@@ -1,0 +1,295 @@
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Press Start 2P', monospace;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Шапка */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d2d2d;
+    padding: 16px;
+    border-bottom: 4px solid #ffcc00;
+    box-shadow: 0 0 8px #ffcc00;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Логотип */
+.header-left .logo {
+    font-size: 1.5em;
+    color: #ffcc00;
+    text-shadow: 2px 2px #ff5733;
+    margin-left: 16px;
+}
+
+/* Центр шапки (меню) */
+.header-center {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+.header-center .menu {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header-center .menu li a {
+    color: #33ccff;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+
+.header-center .menu li a:hover {
+    color: #ffcc00;
+}
+
+/* Форма поиска */
+.search-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.search-container input {
+    padding: 6px 12px;
+    background-color: #1b1b1b;
+    color: #fff;
+    border: 2px solid #ff5733;
+    font-family: 'Press Start 2P', monospace;
+    width: 220px;
+}
+
+.search-container button {
+    padding: 6px 12px;
+    background-color: #ff5733;
+    color: #fff;
+    border: 2px solid #ff5733;
+    font-family: 'Press Start 2P', monospace;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #ffcc00;
+    color: #000;
+    border-color: #ffcc00;
+}
+
+/* Правая часть шапки */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-right: 16px;
+}
+
+.header-right .user {
+    font-size: 0.9em;
+    color: #33ccff;
+}
+
+.header-right .user button {
+    background-color: #ff5733;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 4px 8px;
+    font-family: 'Press Start 2P', monospace;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.header-right .user button:hover {
+    background-color: #ffcc00;
+    border-color: #ff5733;
+    color: #000;
+}
+
+.header-right .user button:active {
+    transform: translateY(2px);
+    background-color: #cc4400;
+}
+
+/* Сообщения */
+.messages {
+    margin: 16px auto;
+    width: 80%;
+    list-style: none;
+    padding: 0;
+    border: 2px solid #ffcc00;
+    background-color: #1b1b1b;
+    box-shadow: 0 0 8px #ffcc00;
+}
+
+.messages li {
+    padding: 8px;
+    margin: 4px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.messages li a.close {
+    float: right;
+    color: #ff5733;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* Основной контейнер */
+#content {
+    background-color: #1b1b1b;
+    padding: 16px;
+    margin: 16px;
+    width: 80%;
+    border: 4px solid #ffcc00;
+    box-shadow: 0 0 8px #ffcc00;
+    text-align: center;
+}
+
+/* Сайдбар */
+#sidebar {
+    background-color: #2d2d2d;
+    padding: 16px;
+    margin: 16px;
+    width: 80%;
+    border: 4px solid #ff5733;
+    box-shadow: 0 0 8px #ff5733;
+    text-align: left;
+}
+
+/* Заголовки */
+h1, h2, h3 {
+    color: #ffcc00;
+    text-transform: uppercase;
+    text-shadow: 2px 2px #ff5733;
+}
+
+/* Ссылки */
+a {
+    color: #33ccff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff5733;
+    text-decoration: underline;
+}
+
+/* Список */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* Кнопки */
+button {
+    background-color: #ff5733;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 8px 16px;
+    font-family: 'Press Start 2P', monospace;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ffcc00;
+    border-color: #ff5733;
+    color: #000;
+}
+
+button:active {
+    transform: translateY(2px);
+    background-color: #cc4400;
+}
+
+#people-list {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
+    gap: 20px; /* Расстояние между элементами */
+    justify-content: center; /* Выравнивание по центру */
+}
+
+.user {
+    text-align: center; /* Центрируем текст под фото */
+}
+
+.user img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* Круглая рамка */
+    object-fit: cover; /* Обрезка изображения, чтобы оно занимало всю область */
+}
+
+.info {
+    margin-top: 10px; /* Отступ между фото и информацией */
+}
+
+.title {
+    font-weight: bold;
+    text-decoration: none; /* Убираем подчеркивание */
+    color: inherit; /* Наследуем цвет от родительского элемента */
+}
+
+.title:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.profile-photo img {
+    width: 180px; /* Задаем фиксированный размер */
+    height: 180px;
+    border-radius: 50%; /* Закругляем рамки */
+    object-fit: cover; /* Убираем искажения */
+    border: 3px solid #00BFFF; /* Добавляем рамку вокруг фото (опционально) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Тень для эффекта */
+    display: block; /* Убираем пробелы вокруг */
+    margin: 0 auto; /* Центрируем */
+}
+
+.post-container {
+    margin-top: 20px;
+}
+
+
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    #content, #sidebar {
+        width: 95%;
+    }
+
+    #header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-left, .header-center, .header-right {
+        margin: 8px 0;
+        text-align: center;
+    }
+
+    .header-center .menu {
+        flex-direction: column;
+        gap: 8px;
+    }
+}

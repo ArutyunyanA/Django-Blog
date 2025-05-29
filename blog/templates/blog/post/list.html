@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+{% load blog_tags %}
+
+{% block title %}System Red Dwarf{% endblock %}
+
+{% block content %}
+    <div id="post-list">
+        <h1 class="rick-header">Red Dwarf</h1>
+
+        {% if tag %}
+            <h2 class="tag-header">Posts tagged with "{{ tag.name }}"</h2>
+        {% endif %}
+
+        <div class="post-grid">
+            {% for post in posts %}
+                <div class="post-card">
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-image">
+                    {% endif %}
+                    <h2 class="post-title">
+                        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                    </h2>
+                    <p class="post-meta">
+                        {{ post.publish|date:"F d, Y" }} by {{ post.author }}
+                    </p>
+                    <div class="post-excerpt">
+                        {{ post.body|markdown|truncatewords_html:30 }}
+                    </div>
+                    <a href="{{ post.get_absolute_url }}" class="read-more-btn">Read More</a>
+                </div>
+            {% endfor %}
+        </div>
+
+        {% include "pagination.html" with page=posts %}
+    </div>
+{% endblock %}

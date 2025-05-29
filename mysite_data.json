@@ -1,0 +1,1140 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2024-01-07T16:25:53.929Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Univers",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2024-01-29T14:37:09.146Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Neptun",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Slug\", \"Body\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2024-01-29T14:37:59.293Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Uranus",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Slug\", \"Body\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2024-01-29T14:38:09.753Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Neptunus",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Slug\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2024-01-29T14:42:02.779Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Jupiter",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2024-01-29T14:42:11.301Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Jupiter",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2024-01-29T14:42:57.435Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "Saturn",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2024-01-29T15:50:17.574Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "Gravity",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2024-01-29T15:53:29.384Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "Gravity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2024-01-31T18:47:20.304Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Comment by Ben on Gravity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Body\", \"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2024-01-31T18:47:44.643Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Comment by Ben on Gravity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2024-08-18T08:34:26.773Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Uranus",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2024-08-18T08:50:32.871Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "planets",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2024-08-18T09:11:03.249Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "4",
+    "object_repr": "planets",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2024-08-18T09:14:56.646Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "4",
+    "object_repr": "planets",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"tagged item\", \"object\": \"Neptunus tagged with planets\", \"fields\": [\"Object ID\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2024-08-18T09:15:11.634Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "4",
+    "object_repr": "planets",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2024-08-18T09:22:58.130Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "4",
+    "object_repr": "planets",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"tagged item\", \"object\": \"Uranus tagged with planets\", \"fields\": [\"Object ID\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2024-08-18T09:27:42.189Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Neptunus",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2024-08-18T09:35:05.881Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Uranus",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2024-08-18T09:35:18.058Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Neptunus",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2024-08-18T09:35:27.456Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Jupiter",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2024-08-18T09:35:34.350Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "Saturn",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2024-08-18T09:35:39.769Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "Gravity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2024-08-18T13:57:09.434Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "Gravity",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2024-08-18T13:58:22.617Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Uranus",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2024-08-18T13:58:33.374Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Neptunus",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2024-08-18T13:58:44.425Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Jupiter",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2024-08-18T13:58:56.108Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "Saturn",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2024-08-21T16:53:24.763Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "localhost:8000",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Domain name\", \"Display name\"]}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add post",
+    "content_type": 7,
+    "codename": "add_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change post",
+    "content_type": 7,
+    "codename": "change_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete post",
+    "content_type": 7,
+    "codename": "delete_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view post",
+    "content_type": 7,
+    "codename": "view_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add comment",
+    "content_type": 8,
+    "codename": "add_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change comment",
+    "content_type": 8,
+    "codename": "change_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete comment",
+    "content_type": 8,
+    "codename": "delete_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view comment",
+    "content_type": 8,
+    "codename": "view_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add tag",
+    "content_type": 9,
+    "codename": "add_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change tag",
+    "content_type": 9,
+    "codename": "change_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete tag",
+    "content_type": 9,
+    "codename": "delete_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view tag",
+    "content_type": 9,
+    "codename": "view_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add tagged item",
+    "content_type": 10,
+    "codename": "add_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change tagged item",
+    "content_type": 10,
+    "codename": "change_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete tagged item",
+    "content_type": 10,
+    "codename": "delete_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view tagged item",
+    "content_type": 10,
+    "codename": "view_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add site",
+    "content_type": 11,
+    "codename": "add_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change site",
+    "content_type": 11,
+    "codename": "change_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete site",
+    "content_type": 11,
+    "codename": "delete_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view site",
+    "content_type": 11,
+    "codename": "view_site"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$2qRY0duoULqnXZjV9rQBkl$7oDiByDEAWzdpDjrhXZxXiz4/u1jIdNLJa8DSChJuP4=",
+    "last_login": "2024-08-18T08:50:08.269Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "hazejohn246@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-01-07T15:44:47.654Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "blog",
+    "model": "post"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "blog",
+    "model": "comment"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "taggit",
+    "model": "tag"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "taggit",
+    "model": "taggeditem"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "sites",
+    "model": "site"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "nh5h596p8r15xao3s5n4j1uuohg4sy8q",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEyyKMu3fcbyAwMUjWQlHZl_HfbpAvd3nPueYuA61LC2nkOUxJXocTpdyOMT647SA-s9yZjq8s8kdwVedAux5b4dTvcv0DBXra3Ax3dcHZGWwKTDGREi7gFjM9sFRFdsgXQ2iuXPQKzd6Ri4sECeys-X-VkODc:1rMVLH:QIo94bON4P8vYfmOYzPRwaXZiO4kFYjw3yR3Awup15Y",
+    "expire_date": "2024-01-21T15:45:39.941Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "xllizytp9w6h28zbd424nbn9mza0s57n",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSEyyKMu3fcbyAwMUjWQlHZl_HfbpAvd3nPueYuA61LC2nkOUxJXocTpdyOMT647SA-s9yZjq8s8kdwVedAux5b4dTvcv0DBXra3Ax3dcHZGWwKTDGREi7gFjM9sFRFdsgXQ2iuXPQKzd6Ri4sECeys-X-VkODc:1sfbc0:Evf-6kHfVtvmqm0qQxymxgR_CXvePM4PVMkfU0Ftryk",
+    "expire_date": "2024-09-01T08:50:08.276Z"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 1,
+  "fields": {
+    "title": "Uranus",
+    "slug": "uranus",
+    "author": 1,
+    "body": "Уран седьмая планета от солнца. \r\nС расстояния около 20 астрономических единиц или в 20-ти кратное расстояние между Землей и Солнцем. Орбитальный путь Урана вокруг солнца составляет 84 года, т.е. полный оборот вокруг нашей красной звезды занимает примерно жизнь человека. Столь протяженная длина орбиты Урана вынуждает каждый сезон длится намного дольше на этой планете. Теоретически, если предположить, что человек мог бы жить на Уране, то он бы только раз смог бы пережить все четыре сезона. Причем каждый из сезонов длился бы около 21 года. Частично благодаря своему удалению от Солнца, Уран может похвастаться самыми холодными температурами в Солнечной системе. Эти ледяные температуры, падающие до минус 370 градусов по Фаренгейту, в значительной степени зависят от состава планет. \r\nИмея в ширину величину равную четырехкратному размеру Землю, Уран имеет ядро размером с нашу Землю. Ядро седьмой по счету планеты состоит в основном из железа, никеля и силиката магния. Напоминание, что примерно 80% Урана - это всемирный океан льдов, состоящих из воды, аммиака, метана, химических веществ стоящих за холодным голубым цветом планеты. В дополнение к экстремальной ледяной температуре и длинной орбите Уран имеет сдвинутые полюса. Это означает, что в отличие Ледяного тяжеловеса все остальные семь планет имеют горизонтальное вращение вокруг своей оси, а Уран вертикальное, лежа под углом 97,77 градусов. Результатом того, что полюса Урана повернуты лицом к солнцу является столкновение с как минимум одним небесным телом, данное столкновение так же повлияло на ориентацию его 13 колец и 27 лун. В отличие от систем колец и лун, планет, которые вращаются вокруг своей оси горизонтально, все луны и система колец Урана вращаются вертикально, как колесо обозрения. \r\nУран и его множество необычных особенностей были загадкой для древних, и планета на самом деле считалась звездой. Hо в конце 18-го века астроном Уильям Гершель обнаружил, что небесный объект был фактически новым миром. Научное сообщество спорило о том, что планета должна быть названа, и в конечном итоге выбрало имя, предложенное астрономом Иоганном Элертом Боде. Боде полагал, что, поскольку Юпитер был отцом богов, а Сатурн был отцом Юпитера, то эта новая планета должна стать отцом Сатурна, Целус. Но вместо того, чтобы следовать традиции использования имен из древнеримской религии, Боде вместо этого выбрал древнегреческий эквивалент Целуса, Уран. В античной Греции Урануc являлся богом небес, в последствии данное имя перевели в латинскую транскрипцию и получилось имя Уран. И по сей день Уран все еще является единственной планетой, которая отличается от традиции и древнегреческого тезки, статус, наиболее подходящий для планеты вне конвекции.",
+    "publish": "2024-01-07T16:21:38Z",
+    "created": "2024-01-07T16:25:53.918Z",
+    "updated": "2024-08-18T13:58:22.611Z",
+    "status": "PB"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 2,
+  "fields": {
+    "title": "Neptunus",
+    "slug": "neptunium",
+    "author": 1,
+    "body": "В самом темном уголке нашей солнечной системы, плавает он,\r\nпривязанный гравитацией нашей красной звезды и едва улавливая её свет и тепло, этот путешественник дрейфует в одиночестве, обманчиво спокойный, неуловимый как глубокое синее море. \r\nНептун восьмая планета от солнца, находящаяся на приблизительно 30-ти кратном расстоянии равном расстоянию от солнца до земли или 30 астрономическим единицам.\r\nНептун самая удаленная планета в нашей солнечной системе. Такое расстояние создает самую длинную орбиту из всех существующих восьми миров, а протяженность оборота вокруг солнца составляет 165 лет с продолжительностью сезонов в 40 лет каждый.\r\nНаходясь так далеко от солнечного тепла и света, Нептун холодная, темная и ледяная планета, в основе которой лежит твердое ядро размером с полуторный размер нашей Земли составляя 45% от общей массы самой планеты. Ядро в основном состоит из железа, никеля, льда и силикатов. Считается, что остальная часть планеты состоит из ледяного океана воды, метана и аммиака окруженный слоем облаков состоящих из Водорода, Гелия и Метана которые и создают этот океанический-голубой окрас. В то время как облака издалека создают прохладный и спокойный безмятежный облик, их окружает самая суровая погода в Солнечной системе. Ветры в слоях атмосферы Нептуна достигают скорости более 1200 миль в час, это почти в пять раз быстрее, чем самые сильные ветра, которые были зарегистрированы на земле. На самом деле, ветра настолько сильны, что преодолевают порой отметку сверхзвуковой скорости и это впечатляет не правда ли?\r\nЭтот холодный ледяной гигант со скверным ветреным характером, обладает своей эко-системой колец и спутников окружающие его вдоль периметра, шесть колец состоят в основном из пыли и камней как напоминание о былых катаклизмах при формировании планеты. Так же вокруг Нептуна кружат 14 спутников, самый большой из них луна-Тритон, названный в честь сына античного Греческого бога моря. Поверхность Тритона покрыта множеством ледяными извергающихся вулканов и возможно содержит в себе подземный океан. \r\nНам многое предстоит узнать об этих столь удаленных от солнца космических тел, пока только Voyager 2 удалось добраться до Нептуна и его системе колец и лун, но у будущих миссий будет возможность рассказать нам больше интересных историй об этом загадочном, темном и холодном мире находящимся на краю солнечной системы",
+    "publish": "2024-01-08T17:25:24Z",
+    "created": "2024-01-08T17:25:29.861Z",
+    "updated": "2024-08-18T13:58:33.365Z",
+    "status": "PB"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 3,
+  "fields": {
+    "title": "Jupiter",
+    "slug": "jupiter",
+    "author": 1,
+    "body": "Юпитер был первой сформированный планетой в солнечной системе и названа в честь древне-римского языческого бога грозы и бога всех богов - Юпитера (аналог древнегреческого бога Зевса) и был обречен на величие и господство в нашей солнечной системе.\r\n\r\nЮпитер пятая планета от солнца и является самой большой в нашей солнечной системе.\r\nПо ширине газовый гигант составляет приблизительно одиннадцать планет-земля.\r\nЮпитер имеет в два раза больше массы, чем другие планеты, вместе взятые. Для сравнения его масса приблизительно равна массам 318 земных масс, а остальные планеты составляют 129 земных масс. Но в отличие от Меркурия, Венеры, Земли и Марса, Юпитер не имеет твердой поверхности. Может даже не имеет традиционного твердого ядра. Скорее, эта планета может иметь плотный, жидкий центр, который окружен всемирным океаном газов - водорода и гелия (Водород 75%, Гелий 24%,  <1%-Аммиак, Метан, Вода). Газовую композицию Юпитера можно наблюдать в его атмосфере, толщиной в 44 мили она как холст художника имприсиониста- разукрашена разноцветными полосами по окружности гиганта и делиться на несколько цветов (Белые, Желтые, Коричневые и Красные), такой окрас определят различный химических состав каждой из областей. Вероятно, самая знаковая особенность Юпитера-это багрово-коричневый шторм, бушующий на этой планете уже больше 300 лет- Большое красное пятно, представляющее собой гигантский кружащейся набор облаков со скоростью свыше 400 миль в час.\r\nВокруг Юпитера насчитывается порядка 79 известных спутников по данным на 2019 год, а самые крупные - первые четыре спутника были открыты еще в 1610 году Галилео Галилеем, это были всем известные: ИО, Ганимед, Европа и Каллисто. Достаточно большой коллекцией спутников гигант достиг благодаря своим внушительным размерам и мощной гравитации, самой сильной в нашей солнечной системе. Так же гравитация данной планеты является живым щитом от рандомных метеоритов, комет и астероидов, которые могут быть поглощены Юпитером либо находят свое пристанище на его орбите, а так же мощная гравитация способна менять траектории полетов крупных небесных тел являющимися потенциальной опасностью для первых маленьких четырех планет от солнца.\r\nКроме солнца Юпитер играет доминирующую роль в жизни нашей солнечной системе, оправдывая свое имя (Юпитер-бог всех богов, громовержец в древнеримской мифологии) и по праву является королем всех планет.",
+    "publish": "2024-01-29T14:41:45Z",
+    "created": "2024-01-29T14:42:02.774Z",
+    "updated": "2024-08-18T13:58:44.417Z",
+    "status": "PB"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 4,
+  "fields": {
+    "title": "Saturn",
+    "slug": "saturn",
+    "author": 1,
+    "body": "С его золотым цветом и потрясающими кольцами, Сатурн-настоящая планетарная жемчужина нашей солнечной системы. Сатурн- вторая по величине планета и по ширине она составляет десятикратный размер планеты земля, но не смотря на ее внушительные размеры Сатурн на самом деле самая легкая планета, преимущественно состоящая из газов водорода и гелия и из-за его газообразного состава, Сатурн единственная планета в солнечной имеющая плотность которой меньше воды, к примеру если бы планета была помещена в огромный океан, она могла бы плавать. \r\nПод внешним видом этого красивого гиганта скрывается два слоя и ядро. Внешний слой-атмосферы является основным и состоит в основном из газов водорода, гелия, следами воды, аммиака. Внутренняя часть составляет в основном- ядро планеты, состоящее из железа, никеля, воды и льда, покрытое небольшим слоем металлического водорода, которые предположительно сформировался благодаря сильному давлению. Поверхность планеты разукрашена золотистыми цветами с примесью голубоватых оттенков из-за содержания в ней газов, жидкостей и желтых кристаллов аммиака, которые кружат вокруг Сатурна, создавая облака бурь и штормы. Самый большой шторм Сатурна находиться на Северном части планеты. Его размер составляет двукратный размер нашей планет и сформированный в почти идеальном шестиугольнике, каждая из шести сторон, как полагают, является результатом струйных потоков, которые все окружают массивный ураган. Из-за неблагоприятной окружающей среды, планета не может поддерживать жизнь, но некоторые из его лун вероятно могут. \r\nСатурн имеет более чем 50 известных на данный момент спутников (луны), причем каждый объект отличается по составу, размеру и рельефу. Энцелад- один из самых маленьких спутников, покрыт льдом, а по ширине он сравним со штатом Пенсильвания. Титан – самый большой спутник Сатурна по ширине сравним с Канадой, так же это единственная луна в солнечной системе, который имеет облака и собственную атмосферу. Титан и Энцелад оба имеют систему подземных океанов, что наводит на мысли о том, что потенциально они могли бы поддерживать жизнь. Луны Сатурна играют основную роль в формировании визитной карточки планеты, называемой: кольцами. Система колец эффектной планеты, является самой сложной в нашей солнечной системе, сформированные в основном из остатков метеоритов, астероидов и комет, а размеры состава колец варьируется от частиц пыли до каменных глыб размером с горы. Система колец делится на семь групп колец, а в ширину равны четырехкратному с половиной земному размеру. Но только две трети от семи разрезов колец, толщина составляет в районе 66 миль. То как кольцам удается оставаться на орбите словно на гоночной трассе и нетронутыми, имеет прямое отношение к маленьким спутникам. Называемые -пастушьими лунами, эти крошечные спутники вращаются вокруг колец, и они, кажется, используют свою гравитацию, чтобы сформировать необходимый вектор пути. Сатурн очаровывал ученых и астрономов любителей на протяжении тысячелетий. Древние греки и римляне, которые назвали планету в честь своего бога земледелия (в греческой мифологии аналогом бога древнеримского бога Сатурн был Кронос), считали, что это звезда. И только в 17 веке, после того как был изобретен телескоп, такие ученые как Галилео Галилей, Христиан Гюйгенс и Джованни Кассини смогли взглянуть ближе. Только после этого был присвоен Сатурну планетарный статус, а затем открыты множество его спутников и конечно же его очаровательная система колец. Из-за своего лунного состава, похожих на планеты, и ослепительной системы колец, Сатурн продолжает очаровывать нас и по сей день.",
+    "publish": "2024-01-29T14:42:32Z",
+    "created": "2024-01-29T14:42:57.425Z",
+    "updated": "2024-08-18T13:58:56.100Z",
+    "status": "PB"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 5,
+  "fields": {
+    "title": "Gravity",
+    "slug": "gravity",
+    "author": 1,
+    "body": "Гравитация - это проявление искривления пространства и времени. \r\n    Гравитация играет фундаментальную роль в структуре и формировании Вселенной, устанавливая связь между плотностью Вселенной и скоростью её расширения, определяя ключевые условия равновесия и устойчивости астрономических систем. Без гравитации во Вселенной не было бы планет, звёзд, галактик, чёрных дыр. Гравитационное сжатие является основным источником энергии на поздних стадиях эволюции звезд таких как белые карлики, нейтронные звезды, чёрные дыры.  Однако, природа гравитации может иметь и разрушительные последствия.",
+    "publish": "2024-01-29T15:50:05Z",
+    "created": "2024-01-29T15:50:17.563Z",
+    "updated": "2024-08-18T13:57:09.417Z",
+    "status": "PB"
+  }
+},
+{
+  "model": "blog.comment",
+  "pk": 1,
+  "fields": {
+    "post": 5,
+    "name": "Ben",
+    "email": "bigben@londonmail.com",
+    "body": "Fantastic, Gravity is constructor of universe!",
+    "created": "2024-01-31T18:21:17.803Z",
+    "updated": "2024-01-31T18:47:44.638Z",
+    "active": true
+  }
+},
+{
+  "model": "blog.comment",
+  "pk": 2,
+  "fields": {
+    "post": 4,
+    "name": "Rene Duchamp",
+    "email": "duchamp@cryptomail.com",
+    "body": "Saturn is such a beautiful planet, such a bright .",
+    "created": "2024-01-31T18:31:11.355Z",
+    "updated": "2024-01-31T18:31:11.355Z",
+    "active": true
+  }
+},
+{
+  "model": "blog.comment",
+  "pk": 3,
+  "fields": {
+    "post": 5,
+    "name": "James Blackwood",
+    "email": "blackwood@divermail.com",
+    "body": "How about black materia its contain 80% gravity of universe, maybe more I'm not sure it was approximately, but anyway, insane!",
+    "created": "2024-01-31T18:44:00.042Z",
+    "updated": "2024-01-31T18:44:00.042Z",
+    "active": true
+  }
+},
+{
+  "model": "blog.comment",
+  "pk": 4,
+  "fields": {
+    "post": 2,
+    "name": "Galileo",
+    "email": "galileo@gmail.com",
+    "body": "Потрясающая планета!",
+    "created": "2024-08-18T06:59:36.339Z",
+    "updated": "2024-08-18T06:59:36.339Z",
+    "active": true
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 2,
+  "fields": {
+    "name": "universe",
+    "slug": "universe"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 3,
+  "fields": {
+    "name": "solar system",
+    "slug": "solar-system"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 4,
+  "fields": {
+    "name": "planets",
+    "slug": "planets"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 5,
+  "fields": {
+    "name": "solar-system",
+    "slug": "solar-system_1"
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 4,
+  "fields": {
+    "tag": 4,
+    "content_type": 7,
+    "object_id": 1
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 5,
+  "fields": {
+    "tag": 4,
+    "content_type": 7,
+    "object_id": 2
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 6,
+  "fields": {
+    "tag": 5,
+    "content_type": 7,
+    "object_id": 1
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 8,
+  "fields": {
+    "tag": 5,
+    "content_type": 7,
+    "object_id": 2
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 10,
+  "fields": {
+    "tag": 4,
+    "content_type": 7,
+    "object_id": 3
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 11,
+  "fields": {
+    "tag": 5,
+    "content_type": 7,
+    "object_id": 3
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 13,
+  "fields": {
+    "tag": 4,
+    "content_type": 7,
+    "object_id": 4
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 14,
+  "fields": {
+    "tag": 5,
+    "content_type": 7,
+    "object_id": 4
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 15,
+  "fields": {
+    "tag": 2,
+    "content_type": 7,
+    "object_id": 5
+  }
+},
+{
+  "model": "sites.site",
+  "pk": 1,
+  "fields": {
+    "domain": "localhost:8000",
+    "name": "localhost:8000"
+  }
+}
+]

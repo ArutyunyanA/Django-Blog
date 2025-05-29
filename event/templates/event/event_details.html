@@ -1,0 +1,47 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+    <h1>{{ event.title }}</h1>
+    {% if event.image %}
+        <img src="{{ event.image_thumbnail.url }}" alt="{{ event.title }}">
+    {% endif %}
+    <p>{{ event.description }}</p>
+    <p>Location: {{ event.country }}, {{ event.region }}, {{ event.city }}</p>
+    <p>Date and time: {{ event.date }} {{ event.time }}</p>
+    {% if request.user == event.creator %}
+        <a href="{% url 'event:event_update' event.id %}">Edit</a> |
+        <a href="{% url 'event:event_delete' event.id %}">Delete</a>
+    {% endif %}
+    <h2>Comments</h2>
+    <ul class="comment-list">
+        {% for comment in comments %}
+            {% include "event/includes/comment_item.html" with comment=comment %}
+        {% empty %}
+            <li>No comments yet.</li>
+        {% endfor %}
+    </ul>
+
+    {% include "event/includes/comment_form.html" %}
+
+    <h3>Participants: ({{ participants.count }})</h3>
+    <ul>
+        {% for participant in participants %}
+            <li>{{ participant.user.username }}</li>
+        {% empty %}
+            <li>Пока нет участников.</li>
+        {% endfor %}
+    </ul>
+    {% if user.is_authenticated %}
+        {% if user.id in participants_ids %}
+            <form method="post" action="{% url 'event:leave_event' event.id %}">
+                {% csrf_token %}
+                <button type="submit">Отменить участие</button>
+            </form>
+        {% else %}
+            <form method="post" action="{% url 'event:participate_in_event' event.id %}">
+                {% csrf_token %}
+                <button type="submit">Присоединиться</button>
+            </form>
+        {% endif %}
+  {% endif %}
+{% endblock %}

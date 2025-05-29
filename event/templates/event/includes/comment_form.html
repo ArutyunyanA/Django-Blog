@@ -1,0 +1,9 @@
+<h2>Add a new comment</h2>
+<form action="{% url 'event:event_comment' event.id %}" method="post" id="comment-form">
+    {{ form.as_p }} 
+    {% csrf_token %}
+    {% if request.GET.parent %}
+        <input type="hidden" name="parent" value="{{ request.GET.parent }}">
+    {% endif %}
+    <button type="submit">Add comment</button>
+</form>

@@ -1,0 +1,395 @@
+/* Общие стили в стиле HoMM3 */
+body {
+    background: none;
+    color: #a9a190;
+    font-family: 'Goudy Old Style', serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#main-layout {
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+    background: #2b1b0f;
+    border: 6px ridge #c0a16b;
+    box-shadow: 0px 0px 15px #000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Сайдбар */
+#sidebar {
+    width: 25%;
+    padding: 20px;
+    background: #3d2e1e;
+    border-right: 4px ridge #a67c52;
+    box-shadow: inset -5px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+#sidebar h2, #sidebar h3 {
+    color: #ffcc66;
+    font-size: 22px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #a67c52;
+    padding-bottom: 5px;
+}
+
+#sidebar a {
+    color: #d4c19c;
+    text-decoration: none;
+}
+
+#sidebar a:hover {
+    color: #ffcc66;
+    text-decoration: underline;
+}
+
+/* Основной контент */
+#content-area {
+    width: 75%;
+    padding: 20px;
+    background: #251a12;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #5a3e2b, #3d2e1e);
+    padding: 10px;
+    border-bottom: 4px ridge #c0a16b;
+}
+
+
+/* Меню */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu li {
+    margin: 0 10px;
+}
+
+.menu a {
+    color: #d4c19c;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    color: #ffcc66;
+    border-bottom: 2px solid #ffcc66;
+}
+
+/* Кнопки */
+button {
+    background: linear-gradient(to bottom, #8c5b3d, #5a3e2b);
+    color: #ffcc66;
+    border: 3px ridge #a67c52;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px #000;
+}
+
+button:hover {
+    background: #5a3e2b;
+    color: #fff;
+}
+
+/* Список пользователей */
+#people-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+    background: #2b1b0f;
+    border: 6px ridge #c0a16b;
+    box-shadow: 0px 0px 15px #000;
+    border-radius: 8px;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #3d2e1e;
+    padding: 10px;
+    border: 3px ridge #a67c52;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    text-align: center;
+    width: 180px;
+}
+
+.user img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    border: 3px ridge #c0a16b;
+    box-shadow: 0px 0px 8px #000;
+}
+
+.user .info {
+    margin-top: 10px;
+}
+
+.user .title {
+    color: #ffcc66;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.user .title:hover {
+    color: #d4c19c;
+    text-decoration: underline;
+}
+
+
+/* Фото профиля */
+.profile-section {
+    margin: 20px 0;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    border: 3px ridge #c0a16b;
+    box-shadow: 0px 0px 8px #000;
+}
+
+/* Dashboard в стиле HoMM3 */
+#dashboard {
+    background: #2b1b0f;
+    border: 6px ridge #c0a16b;
+    box-shadow: 0px 0px 15px #000;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#dashboard h1 {
+    color: #ffcc66;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #a67c52;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#dashboard p, #dashboard a {
+    color: #d4c19c;
+    font-size: 18px;
+}
+
+#dashboard a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#dashboard a:hover {
+    color: #ffcc66;
+    text-decoration: underline;
+}
+
+/* Кнопка создания поста */
+#dashboard button {
+    background: linear-gradient(to bottom, #8c5b3d, #5a3e2b);
+    color: #ffcc66;
+    border: 3px ridge #a67c52;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px #000;
+    margin-top: 20px;
+}
+
+#dashboard button:hover {
+    background: #5a3e2b;
+    color: #fff;
+}
+
+
+/* Список постов */
+.posts-section {
+    margin: 20px 0;
+}
+
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+.post-item {
+    background: #3d2e1e;
+    padding: 10px;
+    border: 3px ridge #a67c52;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.post-item a {
+    color: #ffcc66;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.post-item a:hover {
+    color: #d4c19c;
+    text-decoration: underline;
+}
+
+
+
+
+/* Список постов в стиле HoMM3 */
+#post-list {
+    background: #2b1b0f;
+    border: 6px ridge #c0a16b;
+    box-shadow: 0px 0px 15px #000;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Заголовок */
+#post-list h1 {
+    color: #ffcc66;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #a67c52;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Пост-карточка */
+.post-card {
+    background: #3d2e1e;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 3px ridge #a67c52;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Заголовок поста */
+.post-title a {
+    color: #ffcc66;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.post-title a:hover {
+    color: #d4c19c;
+    text-decoration: underline;
+}
+
+/* Дата и автор */
+.post-meta {
+    font-size: 14px;
+    color: #d4c19c;
+    margin-top: 5px;
+}
+
+.post-date {
+    font-weight: bold;
+    color: #ffcc66;
+}
+
+.post-author {
+    font-style: italic;
+}
+
+/* Теги */
+.post-tags {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.tag-link {
+    color: #ffcc66;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px dotted #ffcc66;
+}
+
+.tag-link:hover {
+    color: #d4c19c;
+    border-bottom: 1px solid #d4c19c;
+}
+
+/* Превью текста поста */
+.post-excerpt {
+    margin-top: 10px;
+    color: #d4c19c;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Изображение поста */
+.post-image {
+    max-width: 300px; /* Устанавливаем максимальную ширину */
+    height: auto; /* Автоматически подстраиваем высоту */
+    display: block;
+    margin-bottom: 10px; /* Отступ снизу */
+    border-radius: 5px; /* Закругление углов */
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 3px ridge #c0a16b;
+    box-shadow: 0px 0px 8px #000;
+}
+  
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #main-layout {
+        flex-direction: column;
+    }
+    #sidebar {
+        width: 100%;
+        border-right: none;
+    }
+    #content-area {
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

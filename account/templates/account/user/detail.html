@@ -1,0 +1,49 @@
+{% extends "blog/base.html" %}
+
+{% block title %}{{ user.get_full_name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ user.get_full_name }}</h1>
+
+    <div class="profile-photo">
+        <img src="{{ user.profile.photo_thumbnail.url }}" alt="User photo">
+    </div>
+
+    <!-- Кнопка подписки/отписки -->
+    {% if user != request.user %}
+        <form action="{% url 'account:user_follow' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="id" value="{{ user.id }}">
+            {% if is_following %}
+                <input type="hidden" name="action" value="unfollow">
+                <button type="submit">Unfollow</button>
+            {% else %}
+                <input type="hidden" name="action" value="follow">
+                <button type="submit">Follow</button>
+            {% endif %}
+        </form>
+    {% endif %}
+
+    <div id="post-list" class="post-container">
+        <h2>Posts by {{ user.get_full_name }}</h2>
+        {% for post in user.blog_posts.all|dictsort:"publish" %}
+            <div class="post">
+                <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+                <p>{{ post.content|slice:":100" }}...</p>
+            </div>
+        {% empty %}
+            <p>No posts yet.</p>
+        {% endfor %}
+    </div>
+
+    <!-- Список подписчиков -->
+    <h3>Followers:</h3>
+    <a href="{% url 'account:followers_list' user.username %}">See all</a>
+
+    <h3>Followers: {{ followers_count }}</h3>
+
+{% endblock %}
+
+
+
+

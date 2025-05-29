@@ -1,0 +1,20 @@
+<li class="comment" id="comment-{{ comment.id }}">
+    <p><strong>{{ comment.author }}</strong> on {{ comment.created|date:"F j, Y, g:i a" }}</p>
+    <p>{{ comment.body|linebreaks }}</p>
+    <p>
+        <a href="?parent={{ comment.id }}#comment-form">Reply</a>
+        
+        {% if request.user == comment.author %}
+            | <a href="{% url 'blog:edit_comment' comment.id %}">Edit</a>
+            | <a href="{% url 'blog:delete_comment' comment.id %}">Delete</a>
+        {% endif %}
+    </p>
+
+    {% if comment.replies_list %}
+        <ul class="replies">
+            {% for reply in comment.replies_list %}
+                {% include "blog/post/includes/comment_item.html" with comment=reply %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>

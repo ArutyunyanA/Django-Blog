@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+  <h1>Events</h1>
+  <a href="{% url 'event:event_create' %}">Create new event</a>
+  <ul>
+    {% for event in events %}
+      <li>
+        {% if event.image %}
+          <img src="{{ event.image_thumbnail.url }}" alt="{{ event.title }}" style="width: 50px; height: auto; object-fit: cover; border-radius: 4px;">
+        {% endif %}
+        <a href="{% url 'event:event_details' event.id %}">{{ event.title }}</a> — {{ event.city }}, {{ event.date }} at {{ event.time }}
+      </li>
+    {% endfor %}
+  </ul>
+  <form method="get">
+    <input type="text" name="city" placeholder="City" value="{{ request.GET.city }}">
+    <input type="date" name="date" value="{{ request.GET.date }}">
+    <button type="submit">Filter</button>
+  </form>
+{% endblock %}

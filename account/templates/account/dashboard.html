@@ -1,0 +1,75 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div id="dashboard">
+    <h1>Welcome, {{ request.user.username }}!</h1>
+    <p>Welcome to your dashboard. You can <a href="{% url 'account:edit' %}">edit your profile</a> or <a href="{% url 'account:password_change' %}">change your password</a>.</p>
+
+    <div class="profile-section">
+        {% if profile and profile.photo %}
+            <img src="{{ profile.photo_thumbnail.url }}" alt="Profile photo" class="profile-photo">
+        {% else %}
+            <p>You haven't uploaded a profile photo yet. <a href="{% url 'account:edit' %}">Upload one now!</a></p>
+        {% endif %}
+    </div>
+
+    <h2>Your Posts</h2>
+
+    <div class="posts-section">
+        {% if posts %}
+            <ul class="post-list">
+                {% for post in posts %}
+                    <li class="post-item">
+                        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>You haven't created any posts yet.</p>
+        {% endif %}
+    </div>
+    
+    <h2>Created Events</h2>
+    <div class="events-section">
+        {% if created_events %}
+            <ul class="event-list">
+                {% for event in created_events %}
+                    <li class="event-item">
+                        <a href="{% url 'event:event_details' event.id %}">{{ event.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>You haven't created any events yet.</p>
+        {% endif %}
+    </div>
+
+    <h2>Participating Events</h2>
+    <div class="events-section">
+        {% if participant_events %}
+            <ul class="event-list">
+                {% for event in participant_events %}
+                    <li class="event-item">
+                        <a href="{% url 'event:event_details' event.id %}">{{ event.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>You aren't participating in any events yet.</p>
+        {% endif %}
+    </div>
+
+
+
+    <form action="{% url 'blog:post_create' %}" method="get">
+        <button type="submit">Create a new post</button>
+    </form>
+</div>
+{% endblock %}
+
+
+
+
+
