@@ -9,10 +9,6 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 
-SuperUser
-Name: GrandMaster
-Password: ,<hRi+gH:U:;A)P
-
 """
 
 from django.urls import reverse_lazy
@@ -28,22 +24,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-s4ea&ua%x5)s8fs#ltdb-lz7+p8emy2912xabmvx%o64@o$-a7'
+SECRET_KEY = 'your django-secret_key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 # Hosts settings
-ALLOWED_HOSTS = ['blogpost.com']
+ALLOWED_HOSTS = ['blogpost.com', 'localhost', '127.0.0.1']
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST = 'hostname.smtp.mail.com'
 EMAIL_PORT = 2525
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
-EMAIL_HOST_USER = 'e83c0f3b2fa768'
-EMAIL_HOST_PASSWORD = '69610a4687a100'
+EMAIL_HOST_USER = 'your host user name'
+EMAIL_HOST_PASSWORD = 'your password'
 
 SITE_ID = 1
 
@@ -193,8 +189,7 @@ LOGIN_URL = 'account:login'
 AXES_FAILURE_LIMIT = 5
 AXES_COOLOF_TIME = timedelta(days=5)
 AXES_RESET_ON_SUCCESS = True
-#LOGOUT_URL = 'account:logout'
-#PASSWORD_CHANGE_REDIRECT_URL = 'account:password_change_done'
+
 
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
