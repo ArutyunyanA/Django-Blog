@@ -40,7 +40,7 @@
 
 ## Downloading and setup process:
 
-### Step 1: Preparation, downloading the PostgreSQL and dotenv.
+## Step 1: Preparation, downloading the PostgreSQL and dotenv.
 
 - Install additional packet which will be contains varibles .env
   
@@ -60,13 +60,13 @@ POSTGRES_HOST=blogpost.com
 POSTGRES_PORT=5432
 ```
 - You have to install the PostgreSQL on your operating system, I will give you instruction only for macOS(Homebrew must be pre installed) and Linux: Ubuntu/Debian.
-# macOS (Homebrew):
+### macOS (Homebrew):
 ```bash
 brew install postgresql@16
 pip install --upgrade pip
 pip install psycopg2-binary
 ```
-# Ubuntu/Debian:
+### Ubuntu/Debian:
 ```bash
 sudo apt-get update && sudo apt-get install -y postgresql postgresql-contrib
 pip install --upgrade pip
@@ -110,7 +110,7 @@ CREATE DATABASE your-username OWNER your-username ENCODING 'UTF-8';
 \q
 ```
 
-### Step 3: Download and install applications packages and modules.
+## Step 3: Download and install applications packages and modules.
 
 ``` bash
 git clone https://github.com/ArutyunyanA/Blog-Post.git
@@ -127,13 +127,13 @@ source .venv/bin/activate
 ```python3
 pip install requirements.txt
 ```
-### Step 4: Generate the django-secret key.
+## Step 4: Generate the django-secret key.
 
 ```python3
 python3 -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
 ```
 
-### Step 5: Create super user and launch.
+## Step 5: Create super user and launch.
 
 ```python3
 python3 manage.py createsuperuser
