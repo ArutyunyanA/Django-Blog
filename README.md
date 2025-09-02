@@ -47,7 +47,7 @@
 ```bash
 pip install python-dotenv
 ```
-- Now all your personal data as APY_KEY, varibles like USER_NAME, HOST_NAME should be writting
+- Now all your personal data as APY_KEY, variables like USER_NAME, HOST_NAME should be writting
 - in .env file in the root directory of the catalog in your's application.
 - Later It will be looks like on example bellow:
 ```python3
@@ -59,8 +59,7 @@ POSTGRES_PASSWORD=strong_password
 POSTGRES_HOST=blogpost.com
 POSTGRES_PORT=5432
 ```
-- But before you setup the database, I suggest you to drop the previous databse test settings which I used for testing purpose of blog application
-- and install the PostgreSQL on your operating system, I will give you instruction only for macOS(Homebrew must be pre installed) and Linux: Ubuntu/Debian.
+- You have to install the PostgreSQL on your operating system, I will give you instruction only for macOS(Homebrew must be pre installed) and Linux: Ubuntu/Debian.
 # macOS (Homebrew):
 ```bash
 brew install postgresql@16
@@ -74,7 +73,44 @@ pip install --upgrade pip
 pip install psycopg2-binary
 ```
 
-### Step 2: Download and install applications packages and modules.
+## Step 2: Data base settings.
+### MacOS
+- In terminal type this command to get postgres shell.
+```bash
+psql -U postgres -d postgres 
+```
+- To create user in database and give it to the right to create database and assign as owner type the follow commands inside the psql shell.
+```psql
+CREATE USER your-username WITH PASSWORD 'strong_password';
+ALTER USER your-username CREATEDB;
+CREATE DATABASE your-username OWNER your-username ENCODING 'UTF-8';
+```
+-Then check inside the psql shell and quit.
+```psql
+\l
+\du
+\q
+```
+### Linux Ubuntu/Debian
+- In terminal type this command to get postgres shell.
+```bash
+sudo -u postgres psql
+```
+- Also creating user in database and give it to the right to create database and assign as owner.
+```psql
+CREATE USER your-username WITH PASSWORD 'strong_password';
+ALTER USER your-username CREATEDB;
+CREATE DATABASE your-username OWNER your-username ENCODING 'UTF-8';
+```
+- Then the same algorythms of commands to check.
+-Then check inside the psql shell and quit.
+```psql
+\l
+\du
+\q
+```
+
+### Step 3: Download and install applications packages and modules.
 
 ``` bash
 git clone https://github.com/ArutyunyanA/Blog-Post.git
@@ -91,24 +127,13 @@ source .venv/bin/activate
 ```python3
 pip install requirements.txt
 ```
-### Step 2: Generate the django-secret key.
+### Step 4: Generate the django-secret key.
 
 ```python3
 python3 -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
 ```
 
-- Then drop down the database:
-```bash
-sudo -u postgres psql -c "DROP DATABASE IF EXISTS blogpost;"
-```
-- Next command you will setup the new database for your purposes.
-
-
-### Step 3: Data base settings.
-
-
-
-### Step 3: Create super user and launch.
+### Step 5: Create super user and launch.
 
 ```python3
 python3 manage.py createsuperuser
