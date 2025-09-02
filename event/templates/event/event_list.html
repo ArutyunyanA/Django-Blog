@@ -1,0 +1,75 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+<div id="event-list" class="container my-5">
+
+  <!-- Заголовок и кнопка -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3 fw-bold d-flex align-items-center">
+      <i class="bi bi-calendar-event-fill text-primary me-2"></i> Events
+    </h1>
+    <a href="{% url 'event:event_create' %}" class="btn btn-success btn-sm">
+      <i class="bi bi-plus-circle me-1"></i> Create Event
+    </a>
+  </div>
+
+  <!-- Форма фильтра -->
+  <form method="get" class="row g-2 mb-4 p-3 bg-light rounded shadow-sm">
+    <div class="col-md-4">
+      <div class="input-group input-group-sm">
+        <span class="input-group-text"><i class="bi bi-geo-alt-fill text-danger"></i></span>
+        <input type="city" name="city" placeholder="City" value="{{ request.GET.city }}"
+               class="form-control">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="input-group input-group-sm">
+        <span class="input-group-text"><i class="bi bi-calendar-date text-primary"></i></span>
+        <input type="date" name="date" value="{{ request.GET.date }}"
+               class="form-control">
+      </div>
+    </div>
+    <div class="col-md-4 d-grid">
+      <button type="submit" class="btn btn-outline-primary btn-sm">
+        <i class="bi bi-funnel-fill me-1"></i> Filter
+      </button>
+    </div>
+  </form>
+  
+  </form>
+
+  <!-- Список событий -->
+  <div class="list-group shadow-sm rounded">
+    {% for event in events %}
+      <a href="{% url 'event:event_details' event.id %}" class="list-group-item list-group-item-action d-flex align-items-center py-3">
+        {% if event.image %}
+          <img src="{{ event.image_thumbnail.url }}" alt="{{ event.title }}"
+               class="me-3 rounded shadow-sm"
+               style="width: 60px; height: 60px; object-fit: cover;">
+        {% else %}
+          <div class="me-3 d-flex align-items-center justify-content-center bg-secondary text-white rounded"
+               style="width: 60px; height: 60px;">
+            <i class="bi bi-image fs-4"></i>
+          </div>
+        {% endif %}
+        <div>
+          <h5 class="mb-1 fw-semibold d-flex align-items-center">
+            <i class="bi bi-star-fill text-warning me-2"></i> {{ event.title }}
+          </h5>
+          <small class="text-muted">
+            <i class="bi bi-geo-alt me-1"></i>{{ event.city }} &nbsp;|&nbsp;
+            <i class="bi bi-clock me-1"></i>{{ event.date }} {{ event.time }}
+          </small>
+        </div>
+      </a>
+    {% empty %}
+      <div class="alert alert-secondary d-flex align-items-center mt-3">
+        <i class="bi bi-exclamation-circle me-2"></i> No events found.
+      </div>
+    {% endfor %}
+  </div>
+
+</div>
+{% endblock %}
+
+

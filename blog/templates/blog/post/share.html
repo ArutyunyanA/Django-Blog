@@ -1,0 +1,47 @@
+{% extends "blog/base.html" %} 
+{% block title %}Share Post{% endblock %} 
+
+{% block content %}
+    <div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+
+        {% if sent %}
+            <div class="alert alert-success d-flex align-items-center" role="alert">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            <div>
+                E-mail successfully sent!  
+                <br>
+                <strong>"{{ post.title }}"</strong> was sent to 
+                <span class="fw-bold">{{ form.cleaned_data.to }}</span>.
+            </div>
+            </div>
+            <a href="{{ post.get_absolute_url }}" class="btn btn-outline-primary mt-3">
+            <i class="bi bi-arrow-left"></i> Back to post
+            </a>
+
+        {% else %}
+            <div class="card shadow-sm border-0">
+            <div class="card-header bg-info text-white d-flex align-items-center">
+                <i class="bi bi-envelope-paper me-2"></i>
+                <h5 class="mb-0">Share "{{ post.title }}" by e-mail</h5>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <div class="d-flex justify-content-end mt-4">
+                    <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-send-fill"></i> Send e-mail
+                    </button>
+                </div>
+                </form>
+            </div>
+            </div>
+        {% endif %}
+
+        </div>
+    </div>
+    </div>
+{% endblock %}

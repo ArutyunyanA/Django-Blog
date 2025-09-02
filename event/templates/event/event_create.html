@@ -1,0 +1,32 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Create Event{% endblock %}
+
+{% block content %}
+  <div class="container mt-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+
+        <div class="card shadow-sm border-0">
+          <div class="card-header bg-primary text-white d-flex align-items-center">
+            <i class="bi bi-calendar-event me-2"></i>
+            <h5 class="mb-0">Create New Event</h5>
+          </div>
+          <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{ form.as_p }}
+
+              <div class="d-flex justify-content-end mt-4">
+                <button type="submit" class="btn btn-success">
+                  <i class="bi bi-plus-circle"></i> Create
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

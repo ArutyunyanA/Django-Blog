@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="alert alert-success shadow-sm">
+                <h4 class="alert-heading">Welcome, {{ new_user.first_name }}!</h4>
+                <p>Your account has been successfully created.</p>
+                <hr>
+                <p class="mb-0">
+                    Now you can <a href="{% url 'account:login' %}" class="alert-link">log in</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

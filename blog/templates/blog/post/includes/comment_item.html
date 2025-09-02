@@ -1,0 +1,48 @@
+<li class="mb-3" id="comment-{{ comment.id }}">
+    <div class="d-flex align-items-start">
+      <!-- Иконка автора -->
+      <div class="me-3">
+        <i class="bi bi-person-circle fs-3 text-secondary"></i>
+      </div>
+  
+      <!-- Контент комментария -->
+      <div class="flex-grow-1">
+        <!-- Автор и дата -->
+        <div class="d-flex justify-content-between align-items-center mb-1">
+          <strong>{{ comment.author }}</strong>
+          <small class="text-muted d-flex align-items-center">
+            <i class="bi bi-clock me-1"></i>{{ comment.created|date:"M d, Y H:i" }}
+          </small>
+        </div>
+  
+        <!-- Текст комментария -->
+        <p class="mb-1">{{ comment.body|linebreaks }}</p>
+  
+        <!-- Reply / Edit / Delete -->
+        <div class="d-flex gap-3 small mb-2">
+          <a href="?parent={{ comment.id }}#comment-form" class="text-decoration-none d-flex align-items-center text-primary">
+            <i class="bi bi-reply me-1"></i> Reply
+          </a>
+          {% if request.user == comment.author %}
+            <a href="{% url 'blog:edit_comment' comment.id %}" class="text-decoration-none">Edit</a>
+            <a href="{% url 'blog:delete_comment' comment.id %}" class="text-decoration-none text-danger">Delete</a>
+          {% endif %}
+        </div>
+  
+        <!-- Вложенные ответы (дерево) -->
+        {% if comment.replies_list %}
+          <ul class="list-unstyled ps-4 border-start border-secondary">
+            {% for reply in comment.replies_list %}
+              {% include "blog/post/includes/comment_item.html" with comment=reply %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+  </li>
+  
+  
+  
+
+  
+

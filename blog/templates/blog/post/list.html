@@ -1,0 +1,69 @@
+{% extends 'blog/base.html' %}
+{% load blog_tags %}
+
+{% block title %}System Red Dwarf{% endblock %}
+
+{% block content %}
+    <div id="post-list" class="container-fluid my-4">
+        <h1 class="text-center mb-5 fw-bold text-primary">🚀 Blog Posts</h1>
+
+        {% if tag %}
+            <h2 class="text-center text-muted mb-5">Posts tagged with "{{ tag.name }}"</h2>
+        {% endif %}
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for post in posts %}
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden post-card">
+                        {% if post.image %}
+                            <img src="{{ post.image.url }}" 
+                                alt="{{ post.title }}" 
+                                class="card-img-top img-fluid" 
+                                style="object-fit: cover; height: 220px;">
+                        {% endif %}
+
+                        <div class="card-body d-flex flex-column p-4">
+                            <h5 class="card-title mb-3 fw-semibold">
+                                <a href="{{ post.get_absolute_url }}" class="text-decoration-none text-dark hover-link">
+                                    {{ post.title }}
+                                </a>
+                            </h5>
+
+                            <!-- Дата и автор -->
+                            <div class="d-flex align-items-center text-muted small mb-3">
+                                <i class="bi bi-calendar-event me-2"></i>{{ post.publish|date:"F d, Y" }}
+                                <span class="mx-2">•</span>
+                                <i class="bi bi-person-circle me-2"></i>{{ post.author }}
+                            </div>
+
+                            <!-- Анонс -->
+                            <p class="card-text flex-grow-1">
+                                {{ post.body|markdown|truncatewords_html:25 }}
+                            </p>
+
+                            <!-- Кнопка -->
+                            <div class="text-center mt-3 mb-3">
+                                <a href="{{ post.get_absolute_url }}" class="btn btn-primary px-4 rounded-pill">
+                                    Read More <i class="bi bi-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+
+                            <!-- Панель действий -->
+                            <div class="d-flex justify-content-between text-muted small border-top pt-2">
+                                <span><i class="bi bi-hand-thumbs-up me-1"></i>{{ post.likes.count }}</span>
+                                <span><i class="bi bi-chat-dots me-1"></i>{{ post.comments.count }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Пагинация -->
+        <div class="mt-5">
+            {% include "pagination.html" with page=posts %}
+        </div>
+    </div>
+{% endblock %}
+
+

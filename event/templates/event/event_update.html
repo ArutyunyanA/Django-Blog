@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<h2>Edit event: {{ event.title }}</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save updates</button>
+</form>
+
+<a href="{% url 'event:event_details' event.id %}">Back to event</a>
+{% endblock %}

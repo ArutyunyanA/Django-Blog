@@ -1,0 +1,144 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% load blog_tags %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <div id="post-detail" class="mb-4">
+    <div class="card shadow-sm border-0">
+        {% if post.image %}
+        <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
+        {% endif %}
+
+        <div class="card-body">
+
+        <!-- Заголовок + мета -->
+        <h1 class="card-title mb-3 fw-bold">{{ post.title }}</h1>
+        <div class="d-flex flex-wrap align-items-center text-muted small mb-3 gap-3">
+            <span class="d-flex align-items-center">
+            <i class="bi bi-person-circle me-1"></i>
+            <span>By <strong>{{ post.author }}</strong></span>
+            </span>
+            <span class="d-flex align-items-center">
+            <i class="bi bi-calendar-event me-1"></i>
+            <span>{{ post.publish|date:"F j, Y" }}</span>
+            </span>
+            <span class="d-flex align-items-center">
+            <i class="bi bi-chat-left-text me-1"></i>
+            <span>{{ comments.count }} comment{{ comments.count|pluralize }}</span>
+            </span>
+        </div>
+
+        {% if user == post.author %}
+
+            <a href="{% url 'blog:post_edit' post.publish.year post.publish.month post.publish.day post.slug %}"
+                class="btn btn-sm btn-outline-secondary">
+                Edit
+            </a>
+
+
+            <a href="{% url 'blog:post_delete' post.id %}" class="btn btn-sm btn-outline-danger">
+                <i class="bi bi-trash"></i> Delete
+
+            </a>
+
+        {% endif %}
+
+        <!-- Тело поста -->
+        <div class="post-body mb-3">
+            {{ post.body|markdown }}
+        </div>
+
+        <!-- Взаимодействия: иконки, без новых URL -->
+        <div class="d-flex align-items-center gap-3 mb-4">
+            <form action="{% url 'blog:post_like' post.id %}" method="post" class="d-inline">
+            {% csrf_token %}
+            {% if is_like %}
+                <button type="submit" class="btn btn-sm btn-primary d-flex align-items-center">
+                <i class="bi bi-hand-thumbs-up-fill me-1"></i>
+                <span>Unlike</span>
+                </button>
+            {% else %}
+                <button type="submit" class="btn btn-sm btn-outline-primary d-flex align-items-center">
+                <i class="bi bi-hand-thumbs-up me-1"></i>
+                <span>Like</span>
+                </button>
+            {% endif %}
+            </form>
+
+            <span class="small text-muted d-flex align-items-center">
+            <i class="bi bi-hand-thumbs-up me-1"></i>{{ like_count }}
+            </span>
+
+            <a href="{% url 'blog:post_share' post.id %}" class="btn btn-sm btn-outline-success d-flex align-items-center">
+            <i class="bi bi-share me-1"></i>
+            <span>Share</span>
+            </a>
+        </div>
+
+        <!-- Похожие посты -->
+        <h5 class="mb-3">Similar posts</h5>
+        {% if similar_posts %}
+            <ul class="list-group list-group-flush mb-4">
+            {% for similar_post in similar_posts %}
+                <li class="list-group-item px-0">
+                <a href="{{ similar_post.get_absolute_url }}">{{ similar_post.title }}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p class="text-muted">There are no similar posts yet.</p>
+        {% endif %}
+
+        <!-- Комментарии -->
+        <h5 class="mb-3">{{ comments.count }} comment{{ comments.count|pluralize }}</h5>
+        <ul class="list-unstyled mb-4">
+            {% for comment in comments %}
+                {% include "blog/post/includes/comment_item.html" with comment=comment %}
+            {% endfor %}
+        </ul>
+
+        <!-- Форма комментариев -->
+        {% if request.GET.parent %}
+            {% with parent_comment=comments|get_comment:request.GET.parent %}
+                <h6 class="mb-3">
+                    Reply to <strong>{{ parent_comment.author }}</strong>
+                </h6>
+                <form action="{% url 'blog:post_comment' post.id %}" method="post" class="mb-3">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        {{ form.body }}
+                    </div>
+                    <input type="hidden" name="parent" value="{{ request.GET.parent|default:'' }}">
+                    <button type="submit" class="btn btn-sm btn-primary d-flex align-items-center">
+                        <i class="bi bi-send me-1"></i> Submit
+                    </button>
+                </form>
+            {% endwith %}
+        {% else %}
+            <h6 class="mb-3">Add a comment</h6>
+            <form action="{% url 'blog:post_comment' post.id %}" method="post" class="mb-3">
+                {% csrf_token %}
+                <div class="mb-3">
+                    {{ form.body }}
+                </div>
+                <input type="hidden" name="parent" value="">
+                <button type="submit" class="btn btn-sm btn-primary d-flex align-items-center">
+                    <i class="bi bi-send me-1"></i> Submit
+                </button>
+            </form>
+        {% endif %}
+    
+
+        </div>
+    </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+

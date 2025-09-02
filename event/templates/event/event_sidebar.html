@@ -1,0 +1,13 @@
+<div class="sidebar-section">
+    <h3>Upcoming Events</h3>
+    <ul>
+      {% for event in events %}
+        <li>
+          <a href="{% url 'event:event_details' event.id %}">{{ event.title }}</a><br>
+          <small>{{ event.city }} — {{ event.date }}</small>
+        </li>
+      {% empty %}
+        <li>No upcoming events.</li>
+      {% endfor %}
+    </ul>
+  </div>

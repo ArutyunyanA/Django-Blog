@@ -1,0 +1,93 @@
+{% extends "blog/base.html" %}
+
+{% block title %}{{ user.get_full_name }}{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Левая колонка: фото + инфо + кнопки -->
+            <div class="col-md-3 text-center">
+                {% if user.profile and user.profile.photo %}
+                    <img src="{{ user.profile.photo_thumbnail.url }}" 
+                        alt="{{ user.get_full_name }}" 
+                        class="rounded-circle img-fluid mb-3 shadow-sm"
+                        style="width:150px; height:150px; object-fit:cover;">
+                {% else %}
+                    <img src="/media/profile_pictures/no_img.jpeg" 
+                        alt="Default photo" 
+                        class="rounded-circle img-fluid mb-3 shadow-sm"
+                        style="width:150px; height:150px; object-fit:cover;">
+                {% endif %}
+
+                <h4 class="mt-2 fw-bold">{{ user.get_full_name }}</h4>
+
+                <!-- Кнопка follow / unfollow -->
+                {% if user != request.user %}
+                    <form action="{% url 'account:user_follow' %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <input type="hidden" name="id" value="{{ user.id }}">
+                        {% if is_following %}
+                            <input type="hidden" name="action" value="unfollow">
+                            <button type="submit" class="btn btn-outline-danger btn-sm mt-2 w-100">
+                                <i class="bi bi-person-dash me-1"></i> Unfollow
+                            </button>
+                        {% else %}
+                            <input type="hidden" name="action" value="follow">
+                            <button type="submit" class="btn btn-primary btn-sm mt-2 w-100">
+                                <i class="bi bi-person-plus me-1"></i> Follow
+                            </button>
+                        {% endif %}
+                    </form>
+                {% endif %}
+
+                <!-- Блок статистики -->
+                <div class="d-flex justify-content-around mt-4 text-muted small">
+                    <div>
+                        <i class="bi bi-people-fill"></i><br>
+                        <strong>{{ followers_count }}</strong><br>
+                        <span>Followers</span>
+                    </div>
+                    <div>
+                        <i class="bi bi-pencil-square"></i><br>
+                        <strong>{{ user.blog_posts.count }}</strong><br>
+                        <span>Posts</span>
+                    </div>
+                    <div>
+                        <i class="bi bi-lightning-charge-fill"></i><br>
+                        <strong>{{ activity_count|default:"0" }}</strong><br>
+                        <span>Events</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая колонка: список постов -->
+            <div class="col-md-9">
+                <h5 class="mb-3"><i class="bi bi-journal-text me-1"></i> Posts by {{ user.get_full_name }}</h5>
+                <div class="list-group shadow-sm rounded">
+                    {% for post in user.blog_posts.all|dictsort:"-publish" %}
+                        <a href="{{ post.get_absolute_url }}" class="list-group-item list-group-item-action">
+                            <h6 class="mb-1 fw-semibold">{{ post.title }}</h6>
+                            <small class="text-muted"><i class="bi bi-calendar3"></i> {{ post.publish|date:"d M Y" }}</small>
+                            <p class="mb-1 mt-1">{{ post.content|slice:":120" }}...</p>
+                        </a>
+                    {% empty %}
+                        <p class="text-muted">No posts yet.</p>
+                    {% endfor %}
+                </div>
+
+                <!-- Список подписчиков -->
+                <div class="mt-4">
+                    <h6 class="fw-bold"><i class="bi bi-people"></i> Followers: {{ followers_count }}</h6>
+                    <a href="{% url 'account:followers_list' user.username %}" class="btn btn-sm btn-outline-secondary mt-2">
+                        <i class="bi bi-eye"></i> See all followers
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+

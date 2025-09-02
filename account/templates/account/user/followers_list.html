@@ -1,0 +1,72 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Followers of {{ user.get_full_name }}{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">
+            Followers of {{ user.get_full_name }}
+        </h2>
+        <div class="row justify-content-center">
+            {% for follower in followers %}
+                {% with follower.user_from as follower_user %}
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                    <div class="card text-center border-0 shadow-sm p-3 h-100">
+                        <a href="{% url 'account:user_detail' follower_user.username %}">
+                            {% if follower_user.profile and follower_user.profile.photo %}
+                                <img src="{{ follower_user.profile.photo_thumbnail.url }}" 
+                                    alt="{{ follower_user.get_full_name }}" 
+                                    class="rounded-circle img-fluid mb-2"
+                                    style="width:80px; height:80px; object-fit:cover;">
+                            {% else %}
+                                <img src="/media/profile_pictures/no_img.jpeg" 
+                                    alt="Default photo" 
+                                    class="rounded-circle img-fluid mb-2"
+                                    style="width:80px; height:80px; object-fit:cover;">
+                            {% endif %}
+                        </a>
+                        <h6 class="mb-1">
+                            <a href="{% url 'account:user_detail' follower_user.username %}" 
+                            class="text-decoration-none text-dark">
+                                {{ follower_user.get_full_name|default:follower_user.username }}
+                            </a>
+                        </h6>
+                        <small class="text-muted d-block mb-2">@{{ follower_user.username }}</small>
+
+                        <!-- Мини-иконки активности -->
+                        <div class="d-flex justify-content-center gap-2 mb-2">
+                            <span class="text-muted" title="Posts">
+                                <i class="bi bi-file-text"></i> {{ follower_user.blog_posts.count }}
+                            </span>
+                            <span class="text-muted" title="Followers">
+                                <i class="bi bi-people"></i> {{ follower_user.followers.count }}
+                            </span>
+                        </div>
+
+                        <!-- Кнопка Follow/Unfollow -->
+                        {% if follower_user != request.user %}
+                            <form action="{% url 'account:user_follow' %}" method="post" class="d-inline">
+                                {% csrf_token %}
+                                <input type="hidden" name="id" value="{{ follower_user.id }}">
+                                {% if follower_user in request.user.following.all %}
+                                    <input type="hidden" name="action" value="unfollow">
+                                    <button type="submit" class="btn btn-sm btn-outline-danger w-100">
+                                        <i class="bi bi-person-dash"></i> Unfollow
+                                    </button>
+                                {% else %}
+                                    <input type="hidden" name="action" value="follow">
+                                    <button type="submit" class="btn btn-sm btn-primary w-100">
+                                        <i class="bi bi-person-plus"></i> Follow
+                                    </button>
+                                {% endif %}
+                            </form>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endwith %}
+            {% empty %}
+                <p class="text-muted text-center">No followers yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

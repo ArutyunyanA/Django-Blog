@@ -1,0 +1,38 @@
+<li class="comment-item mb-3" id="comment-{{ comment.id }}">
+    <div class="comment-metadata small text-muted mb-1">
+        <i class="bi bi-person-circle me-1"></i>
+        <span class="comment-author fw-semibold">{{ comment.author }}</span>
+        &nbsp;·&nbsp;
+        <span class="comment-date">{{ comment.created|date:"F j, Y, g:i a" }}</span>
+    </div>
+
+    <div class="comment-body mb-2">
+        {{ comment.body|linebreaks }}
+    </div>
+
+    <div class="comment-actions small mb-2">
+        <a href="?parent={{ comment.id }}#comment-form" class="me-2">
+            <i class="bi bi-reply"></i> Reply
+        </a>
+        {% if request.user == comment.author %}
+            <a href="{% url 'event:event_edit_comment' comment.id %}" class="me-2 text-warning">
+                <i class="bi bi-pencil-square"></i> Edit
+            </a>
+            <a href="{% url 'event:event_delete_comment' comment.id %}" class="text-danger">
+                <i class="bi bi-trash"></i> Delete
+            </a>
+        {% endif %}
+    </div>
+
+    {% if comment.replies_list %}
+        <ul class="comment-thread list-unstyled ms-4 border-start ps-3">
+            {% for reply in comment.replies_list %}
+                {% include "event/includes/comment_item.html" with comment=reply %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>
+
+
+
+

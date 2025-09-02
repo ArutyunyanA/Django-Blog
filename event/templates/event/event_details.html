@@ -1,0 +1,140 @@
+{% extends "blog/base.html" %}
+{% load event_tags %}
+
+{% block content %}
+
+  <!-- Hero карточка события -->
+  <div class="card mb-4 shadow-sm border-0">
+      {% if event.image %}
+          <img src="{{ event.image_thumbnail.url }}" 
+               alt="{{ event.title }}" 
+               class="card-img-top img-fluid rounded-top"
+               style="max-height: 350px; width: 100%; object-fit: cover;">
+      {% endif %}
+      <div class="card-body">
+          <h1 class="card-title display-5 fw-bold mb-3">{{ event.title }}</h1>
+          <p class="card-text lead">{{ event.description }}</p>
+
+          <!-- Информация о событии -->
+          <ul class="list-unstyled text-muted mb-4">
+              <li class="mb-2">
+                  <i class="bi bi-geo-alt-fill me-2 text-danger"></i>
+                  {{ event.country }}, {{ event.region }}, {{ event.city }}
+              </li>
+              <li>
+                  <i class="bi bi-calendar-event-fill me-2 text-primary"></i>
+                  {{ event.date }} {{ event.time }}
+              </li>
+          </ul>
+
+          <!-- Кнопки редактирования (для создателя) -->
+          {% if request.user == event.creator %}
+              <a href="{% url 'event:event_update' event.id %}" class="btn btn-sm btn-outline-primary me-2">
+                  <i class="bi bi-pencil-square"></i> Edit
+              </a>
+              <a href="{% url 'event:event_delete' event.id %}" class="btn btn-sm btn-outline-danger">
+                  <i class="bi bi-trash"></i> Delete
+              </a>
+          {% endif %}
+      </div>
+  </div>
+
+
+  <!-- Участники + кнопка Join -->
+  <div class="card mb-4 shadow-sm border-0">
+      <div class="card-body">
+          <h3 class="h5 mb-3">
+              <i class="bi bi-people-fill me-2 text-success"></i>
+              Participants ({{ participants.count }})
+          </h3>
+          <ul class="list-unstyled mb-3">
+              {% for participant in participants %}
+                  <li>
+                      <i class="bi bi-person-circle me-1"></i>
+                      {{ participant.user.username }}
+                  </li>
+              {% empty %}
+                  <li class="text-muted">No participants yet.</li>
+              {% endfor %}
+          </ul>
+
+          {% if user.is_authenticated %}
+              {% if user.id in participants_ids %}
+                  <form method="post" action="{% url 'event:leave_event' event.id %}">
+                      {% csrf_token %}
+                      <button type="submit" class="btn btn-outline-secondary w-100">
+                          <i class="bi bi-x-circle"></i> Cancel participation
+                      </button>
+                  </form>
+              {% else %}
+                  <form method="post" action="{% url 'event:participate_in_event' event.id %}">
+                      {% csrf_token %}
+                      <button type="submit" class="btn btn-success w-100">
+                          <i class="bi bi-check-circle"></i> Join Event
+                      </button>
+                  </form>
+              {% endif %}
+          {% endif %}
+      </div>
+  </div>
+
+
+  <!-- Комментарии -->
+  <div class="card mb-4 shadow-sm border-0">
+      <div class="card-body">
+          <h3 class="h5 mb-3">
+              <i class="bi bi-chat-left-text-fill me-2 text-info"></i>
+              Comments
+          </h3>
+
+          <ul class="list-unstyled">
+            {% for comment in comments %}
+                {% include "event/includes/comment_item.html" with comment=comment %}
+            {% empty %}
+                <li class="text-muted">No comments yet.</li>
+            {% endfor %}
+        </ul>
+        <!-- Форма комментариев -->
+        {% if request.GET.parent %}
+            {% with parent_comment=comments|get_comment:request.GET.parent %}
+                <h6 class="mb-3">Reply to {{ parent_comment.author }}</h6>
+                <form action="{% url 'event:event_comment' event.id %}" method="post" class="mb-3">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        {{ form.body }}
+                    </div>
+                    <input type="hidden" name="parent" value="{{ request.GET.parent|default:'' }}">
+                    <button type="submit" class="btn btn-sm btn-primary">
+                        <i class="bi bi-send"></i> Submit
+                    </button>
+                </form>
+            {% endwith %}
+        {% else %}
+            <h6 class="mb-3">Add a comment</h6>
+            <form action="{% url 'event:event_comment' event.id %}" method="post" class="mb-3">
+                {% csrf_token %}
+                <div class="mb-3">
+                    {{ form.body }}
+                </div>
+                <input type="hidden" name="parent" value="">
+                <button type="submit" class="btn btn-sm btn-primary d-flex align-items-center">
+                    <i class="bi bi-send me-1"></i> Submit
+                </button>
+            </form>
+        {% endif %}
+
+        
+      </div>
+  </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+{% extends "blog/base.html" %}
+
+{% block title %}People{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="mb-4 text-center">People</h2>
+        <div class="row justify-content-center">
+            {% for user in users %}
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+                <div class="card text-center border-0 shadow-sm p-3">
+                    <!-- Avatar -->
+                    <a href="{{ user.get_absolute_url }}">
+                        {% if user.profile and user.profile.photo %}
+                            <img src="{{ user.profile.photo_thumbnail.url }}" 
+                                alt="{{ user.get_full_name }}" 
+                                class="rounded-circle img-fluid mb-2 border"
+                                style="width:90px; height:90px; object-fit:cover;">
+                        {% else %}
+                            <div class="rounded-circle bg-light d-flex align-items-center justify-content-center mb-2 border"
+                                style="width:90px; height:90px; font-size:2rem;">
+                                <i class="bi bi-person"></i>
+                            </div>
+                        {% endif %}
+                    </a>
+
+                    <!-- Name -->
+                    <h6 class="mb-1">
+                        <a href="{{ user.get_absolute_url }}" class="text-decoration-none text-dark fw-bold">
+                            {{ user.get_full_name|default:user.username }}
+                        </a>
+                    </h6>
+
+                    <!-- Activity stats -->
+                    <div class="d-flex justify-content-center small text-muted mt-1">
+                        <div class="mx-1" title="Posts">
+                            <i class="bi bi-pencil-square me-1"></i>{{ user.posts.count }}
+                        </div>
+                        <div class="mx-1" title="Events">
+                            <i class="bi bi-calendar-event me-1"></i>{{ user.created_events.count }}
+                        </div>
+                        <div class="mx-1" title="Followers">
+                            <i class="bi bi-people me-1"></i>{{ user.followers.count }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+

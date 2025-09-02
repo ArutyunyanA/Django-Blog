@@ -1,0 +1,13 @@
+
+<h6 class="mb-3">Add a comment</h6>
+<form action="{% url 'event:event_comment' post.id %}" method="post" class="mb-3">
+    {% csrf_token %}
+    <div class="mb-3">
+        {{ form.body }}
+    </div>
+    <input type="hidden" name="parent" value="">
+    <button type="submit" class="btn btn-sm btn-primary d-flex align-items-center">
+        <i class="bi bi-send me-1"></i> Submit
+    </button>
+</form>
+

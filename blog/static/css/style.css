@@ -1,0 +1,52 @@
+
+/* Стили для base.html */
+
+.navbar-search { width: 320px; }
+@media (max-width: 992px) {
+  .navbar-search { width: 100%; }
+}
+
+
+.sticky-offset { top: 5rem; } 
+
+.card { border-radius: .75rem; }
+
+/* Стили для login.html */
+form p {
+    margin-bottom: 1rem;
+  }
+  
+form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+  
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.2s;
+  }
+  
+form input:focus {
+    border-color: #0d6efd;
+    outline: none;
+  }
+  
+.btn-custom {
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+
