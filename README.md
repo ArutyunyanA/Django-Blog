@@ -51,7 +51,7 @@ pip install python-dotenv
 - in .env file in the root directory of the catalog in your's application.
 - Later It will be looks like on example bellow:
 ```python3
-DJANGO_SECRET_KEY=мой_секретный_ключ
+DJANGO_SECRET_KEY=django_secret_key
 DEBUG=False
 POSTGRES_DB=blogpost
 POSTGRES_USER=bloguser
