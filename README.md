@@ -135,8 +135,7 @@ python3 -c "from django.core.management.utils import get_random_secret_key; prin
 
 ## Step 5: Setup your settings.py.
 
-- Go to mysite folder and open settings.py
-
+- This is how your .env file should be looks like.
 ```.env
 POSTGRES_DB=blogpost
 POSTGRES_USER=bloguser
@@ -149,6 +148,7 @@ EMAIL_HOST_USER=your_user_name or api
 EMAIL_HOST_PASSWORD=your_password
 DJANGO_SECRET_KEY=your_django_secret_key
 ```
+- Then go to mysite folder and open settings.py to setup your variables.
 
 ```python3
 import os
