@@ -50,7 +50,7 @@ pip install python-dotenv
 - Now all your personal data as APY_KEY, variables like USER_NAME, HOST_NAME should be writting
 - in .env file in the root directory of the catalog in your's application.
 - Later It will be looks like on example bellow:
-```python3
+```.env
 DJANGO_SECRET_KEY=django_secret_key
 DEBUG=False
 POSTGRES_DB=blogpost
