@@ -133,7 +133,55 @@ pip install requirements.txt
 python3 -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
 ```
 
-## Step 5: Create super user and launch.
+## Step 5: Setup your settings.py.
+
+- Go to mysite folder and open settings.py
+
+```.env
+POSTGRES_DB=blogpost
+POSTGRES_USER=bloguser
+POSTGRES_PASSWORD=strong_password
+POSTGRES_HOST=127.0.0.1
+POSTGRES_PORT=5432
+EMAIL_HOST=example.smtp.mail.com
+EMAIL_PORT=2525
+EMAIL_HOST_USER=your_user_name or api
+EMAIL_HOST_PASSWORD=your_password
+DJANGO_SECRET_KEY=your_django_secret_key
+```
+
+```python3
+import os
+from dotenv import load_dotenv
+
+# Download variables from .env
+load_dotenv()
+
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
+
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.getenv("POSTGRES_DB"),
+        "USER": os.getenv("POSTGRES_USER"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
+        "HOST": os.getenv("POSTGRES_HOST"),
+        "PORT": os.getenv("POSTGRES_PORT"),
+        "CONN_MAX_AGE": 60,
+    }
+}
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.getenv(EMAIL_HOST)
+EMAIL_PORT = os.getenv(EMAIL_PORT)
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = os.getenv(EMAIL_HOST_USER)
+EMAIL_HOST_PASSWORD = os.getenv(EMAIL_HOST_PASSWORD)
+```
+
+## Step 6: Create super user and launch.
 
 ```python3
 python3 manage.py createsuperuser
